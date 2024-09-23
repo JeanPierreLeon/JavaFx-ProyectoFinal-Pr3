@@ -6,6 +6,8 @@ module co.edu.uniquindio.pr3.billeteravirtualapp {
     requires javafx.graphics;
 
 
+
     opens co.edu.uniquindio.pr3.billeteravirtualapp to javafx.fxml;
     exports co.edu.uniquindio.pr3.billeteravirtualapp;
+
 }

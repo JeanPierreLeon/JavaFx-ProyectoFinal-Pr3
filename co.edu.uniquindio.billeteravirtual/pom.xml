@@ -73,7 +73,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>co.edu.uniquindio.pr3.billeteravirtualapp/co.edu.uniquindio.pr3.billeteravirtualapp.HelloApplication</mainClass>
+              <mainClass>co.edu.uniquindio.pr3.billeteravirtualapp/co.edu.uniquindio.pr3.billeteravirtualapp.BilleteraVirtualApplication</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>
