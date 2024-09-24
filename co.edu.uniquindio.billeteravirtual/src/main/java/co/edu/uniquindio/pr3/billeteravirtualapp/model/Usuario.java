@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Usuario extends Persona {
 
-    private int idUsuario;
+    private String idUsuario;
     private double saldoTotal;
-    ArrayList<Cuenta> listaCuentasAsociadas = new ArrayList<>();
+    private String cuentasAsociadas;
 
 
 
@@ -14,11 +14,11 @@ public class Usuario extends Persona {
 
     }
 
-    public int getIdUsuario() {
+    public String getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
 
@@ -30,11 +30,12 @@ public class Usuario extends Persona {
         this.saldoTotal = saldoTotal;
     }
 
-    public ArrayList<Cuenta> getListaCuentasAsociadas() {
-        return listaCuentasAsociadas;
+
+    public String getCuentasAsociadas() {
+        return cuentasAsociadas;
     }
 
-    public void setListaCuentasAsociadas(ArrayList<Cuenta> listaCuentasAsociadas) {
-        this.listaCuentasAsociadas = listaCuentasAsociadas;
+    public void setCuentasAsociadas(String cuentasAsociadas) {
+        this.cuentasAsociadas = cuentasAsociadas;
     }
 }

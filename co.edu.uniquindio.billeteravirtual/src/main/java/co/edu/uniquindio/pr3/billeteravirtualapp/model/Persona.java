@@ -3,14 +3,14 @@ package co.edu.uniquindio.pr3.billeteravirtualapp.model;
 public abstract class Persona {
     private String nombreCompleto;
     private String correoElectronico;
-    private String telefono;
+    private int telefono;
     private String direccion;
     private String cedula;
 
     public Persona() {
     }
 
-    public Persona(String nombreCompleto, String correoElectronico, String telefono, String direccion, String cedula) {
+    public Persona(String nombreCompleto, String correoElectronico, int telefono, String direccion, String cedula) {
         this.nombreCompleto = nombreCompleto;
         this.correoElectronico = correoElectronico;
         this.telefono = telefono;
@@ -34,11 +34,11 @@ public abstract class Persona {
         this.correoElectronico = correoElectronico;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
