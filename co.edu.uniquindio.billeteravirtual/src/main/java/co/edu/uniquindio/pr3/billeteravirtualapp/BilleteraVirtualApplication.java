@@ -12,7 +12,7 @@ public class BilleteraVirtualApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(BilleteraVirtualApplication.class.getResource("BilleteraVirtual.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("Billetera Virtual App");
         stage.setScene(scene);
         stage.show();
     }

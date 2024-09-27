@@ -10,7 +10,7 @@ public class BilleteraVirtual implements IBilleteraVirtualService {
     ArrayList<Cuenta> listaCuentas = new ArrayList<>();
     ArrayList<Transaccion> listaTransacciones = new ArrayList<>();
     ArrayList<Categoria> listaCategorias = new ArrayList<>();
-    ArrayList<Presupuesto> listaPresupuestos = new ArrayList<Presupuesto>();
+    ArrayList<Presupuesto> listaPresupuestos = new ArrayList<>();
 
     public BilleteraVirtual() {
     }
@@ -60,17 +60,19 @@ public class BilleteraVirtual implements IBilleteraVirtualService {
     }
 
     @Override
-    public Usuario crearUsuario(String idUsuario, String nombreCompleto, String correo, String direccion) throws UsuarioException {
+    public Usuario crearUsuario(String idUsuario, String nombreCompleto, String correo, String direccion, Double saldoTotal, String cuentasAsociadas) throws UsuarioException {
         Usuario nuevoUsuario = null;
         boolean usuarioExiste = verificarUsuarioExistente(idUsuario);
         if(usuarioExiste){
-            throw new UsuarioException("El empleado con id de usuario: "+idUsuario+" ya existe");
+            throw new UsuarioException("El usuario con id de usuario: "+ idUsuario +" ya existe");
         }else{
             nuevoUsuario = new Usuario();
-            nuevoUsuario.setIdUsuario(String.valueOf(Integer.parseInt(idUsuario)));
+            nuevoUsuario.setIdUsuario((idUsuario));
             nuevoUsuario.setNombreCompleto(nombreCompleto);
             nuevoUsuario.setCorreoElectronico(correo);
             nuevoUsuario.setDireccion(direccion);
+            nuevoUsuario.setSaldoTotal(saldoTotal);
+            nuevoUsuario.setCuentasAsociadas(cuentasAsociadas);
             getListaUsuarios().add(nuevoUsuario);
         }
         return nuevoUsuario;
@@ -78,13 +80,13 @@ public class BilleteraVirtual implements IBilleteraVirtualService {
 
     @Override
     public Boolean eliminarUsuario(String idUsuario) throws UsuarioException {
-        Usuario empleado = null;
+        Usuario usuario = null;
         boolean flagExiste = false;
-        empleado = obtenerUsuario(idUsuario);
-        if(empleado == null)
+        usuario = obtenerUsuario(idUsuario);
+        if(usuario == null)
             throw new UsuarioException("El empleado a eliminar no existe");
         else{
-            getListaUsuarios().remove(empleado);
+            getListaUsuarios().remove(usuario);
             flagExiste = true;
         }
         return flagExiste;
@@ -135,13 +137,13 @@ public class BilleteraVirtual implements IBilleteraVirtualService {
     }
 
     public boolean usuarioExiste(String idUsuario) {
-        boolean empleadoEncontrado = false;
+        boolean usuarioEncontrado = false;
         for (Usuario usuario : getListaUsuarios()) {
             if(usuario.getIdUsuario().equalsIgnoreCase((idUsuario))){
-                empleadoEncontrado = true;
+                usuarioEncontrado = true;
                 break;
             }
         }
-        return empleadoEncontrado;
+        return usuarioEncontrado;
     }
 }

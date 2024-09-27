@@ -1,7 +1,7 @@
 package co.edu.uniquindio.pr3.billeteravirtualapp.mapping.dto;
 
 public record UsuarioDto(
-        String idUsuario,
+        int idUsuario,
         String nombreCompleto,
         String correoElectronico,
         int telefono,

@@ -10,7 +10,7 @@ public class BilleteraVirtualUtils {
         BilleteraVirtual billeteraVirtual = new BilleteraVirtual();
 
         Usuario usuario = new Usuario();
-        usuario.setIdUsuario("001");
+        usuario.setIdUsuario(String.valueOf(001));
         usuario.setNombreCompleto("Santiago Ramirez");
         usuario.setCorreoElectronico("Santiago@gmail.com");
         usuario.setTelefono(314444444);
@@ -20,7 +20,7 @@ public class BilleteraVirtualUtils {
         billeteraVirtual.getListaUsuarios().add(usuario);
 
         usuario = new Usuario();
-        usuario.setIdUsuario("002");
+        usuario.setIdUsuario(String.valueOf(002));
         usuario.setNombreCompleto("Santiago Muñoz");
         usuario.setCorreoElectronico("Muñoz@gmail.com");
         usuario.setTelefono(31333333);
@@ -30,12 +30,12 @@ public class BilleteraVirtualUtils {
         billeteraVirtual.getListaUsuarios().add(usuario);
 
         usuario = new Usuario();
-        usuario.setIdUsuario("003");
+        usuario.setIdUsuario(String.valueOf(003));
         usuario.setNombreCompleto("Pablo Escobar");
         usuario.setCorreoElectronico("Patron@gmail.com");
         usuario.setTelefono(316666666);
         usuario.setDireccion("Cra 66 Calle 66");
-        usuario.setSaldoTotal(99999999);
+        usuario.setSaldoTotal(99999);
         usuario.setCuentasAsociadas("Nequi, DaviPlata, Paypal");
         billeteraVirtual.getListaUsuarios().add(usuario);
         System.out.println("Información de la billetera creada");

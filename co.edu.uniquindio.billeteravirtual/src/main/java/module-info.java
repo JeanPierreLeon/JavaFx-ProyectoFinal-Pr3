@@ -15,6 +15,7 @@ module co.edu.uniquindio.pr3.billeteravirtualapp {
     exports co.edu.uniquindio.pr3.billeteravirtualapp.mapping.dto;
     exports co.edu.uniquindio.pr3.billeteravirtualapp.mapping.mappers;
     exports co.edu.uniquindio.pr3.billeteravirtualapp.model;
+    exports co.edu.uniquindio.pr3.billeteravirtualapp.exceptions;
     opens co.edu.uniquindio.pr3.billeteravirtualapp.controller to javafx.fxml;
 
 

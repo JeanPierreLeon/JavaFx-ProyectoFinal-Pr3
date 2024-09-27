@@ -153,7 +153,7 @@ public class UsuarioViewController {
     private void actualizarUsuario() {
         boolean usuarioActualizado = false;
         //1. Capturar los datos
-        String idUsuarioActual =usuarioSeleccionado.idUsuario();
+        String idUsuarioActual = String.valueOf(usuarioSeleccionado.idUsuario());
         UsuarioDto usuarioDto = construirUsuarioDto();
         //2. verificar el empleado seleccionado
         if(usuarioSeleccionado != null){
@@ -164,13 +164,13 @@ public class UsuarioViewController {
                     listaUsuariosDto.remove(usuarioSeleccionado);
                     listaUsuariosDto.add(usuarioDto);
                     TableUsuarios.refresh();
-                    mostrarMensaje("Notificación empleado", "Empleado actualizado", "El empleado se ha actualizado con éxito", Alert.AlertType.INFORMATION);
+                    mostrarMensaje("Notificación Usuario", "Usuario actualizado", "El Usuario se ha actualizado con éxito", Alert.AlertType.INFORMATION);
                     limpiarCamposUsuario();
                 }else{
-                    mostrarMensaje("Notificación empleado", "Empleado no actualizado", "El empleado no se ha actualizado con éxito", Alert.AlertType.INFORMATION);
+                    mostrarMensaje("Notificación Usuario", "Usuario no actualizado", "El Usuario no se ha actualizado con éxito", Alert.AlertType.INFORMATION);
                 }
             }else{
-                mostrarMensaje("Notificación empleado", "Empleado no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
+                mostrarMensaje("Notificación Usuario", "Usuario no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
             }
 
         }
@@ -183,19 +183,19 @@ public class UsuarioViewController {
         if(datosValidos(usuarioDto)){
             if(usuarioControllerService.agregarUsuario(usuarioDto)){
                 listaUsuariosDto.add(usuarioDto);
-                mostrarMensaje("Notificación empleado", "Empleado creado", "El empleado se ha creado con éxito", Alert.AlertType.INFORMATION);
+                mostrarMensaje("Notificación Usuario", "Usuario creado", "El Usuario se ha creado con éxito", Alert.AlertType.INFORMATION);
                 limpiarCamposUsuario();
             }else{
-                mostrarMensaje("Notificación empleado", "Empleado no creado", "El empleado no se ha creado con éxito", Alert.AlertType.ERROR);
+                mostrarMensaje("Notificación Usuario", "Usuario no creado", "El Usuario no se ha creado con éxito", Alert.AlertType.ERROR);
             }
         }else{
-            mostrarMensaje("Notificación empleado", "Empleado no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
+            mostrarMensaje("Notificación Usuario", "Usuario no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
         }
     }
 
     private UsuarioDto construirUsuarioDto() {
         return new UsuarioDto(
-                txtIDUsuario.getText(),
+                Integer.parseInt(txtIDUsuario.getText()),
                 txtNombreCompleto.getText(),
                 txtCorreo.getText(),
                 Integer.parseInt(txtTelefono.getText()),
@@ -222,15 +222,15 @@ public class UsuarioViewController {
         if(usuarioDto.nombreCompleto() == null || usuarioDto.nombreCompleto().equals(""))
             mensaje += "El nombre es invalido \n" ;
         if(usuarioDto.correoElectronico() == null || usuarioDto.correoElectronico() .equals(""))
-            mensaje += "El apellido es invalido \n" ;
+            mensaje += "El correo es invalido \n" ;
         if(usuarioDto.direccion() == null || usuarioDto.direccion().equals(""))
-            mensaje += "El documento es invalido \n" ;
-        if(usuarioDto.cuentasAsociadas() == null || usuarioDto.cuentasAsociadas().equals(""))
             mensaje += "La direccion es invalida \n" ;
+        if(usuarioDto.cuentasAsociadas() == null || usuarioDto.cuentasAsociadas().equals(""))
+            mensaje += "Las cuentas asociadas son invalidas \n" ;
         if(mensaje.equals("")){
             return true;
         }else{
-            mostrarMensaje("Notificación cliente","Datos invalidos",mensaje, Alert.AlertType.WARNING);
+            mostrarMensaje("Notificación Usuario","Datos invalidos",mensaje, Alert.AlertType.WARNING);
             return false;
         }
     }
@@ -266,13 +266,13 @@ public class UsuarioViewController {
                     usuarioSeleccionado = null;
                     TableUsuarios.getSelectionModel().clearSelection();
                     limpiarCamposUsuario();
-                    mostrarMensaje("Notificación empleado", "Empleado eliminado", "El empleado se ha eliminado con éxito", Alert.AlertType.INFORMATION);
+                    mostrarMensaje("Notificación Usuario", "Usuario eliminado", "El Usuario se ha eliminado con éxito", Alert.AlertType.INFORMATION);
                 }else{
-                    mostrarMensaje("Notificación empleado", "Empleado no eliminado", "El empleado no se puede eliminar", Alert.AlertType.ERROR);
+                    mostrarMensaje("Notificación Usuario", "Usuario no eliminado", "El Usuario no se puede eliminar", Alert.AlertType.ERROR);
                 }
             }
         }else{
-            mostrarMensaje("Notificación empleado", "Empleado no seleccionado", "Seleccionado un empleado de la lista", Alert.AlertType.WARNING);
+            mostrarMensaje("Notificación Usuario", "Usuario no seleccionado", "Seleccionado un Usuario de la lista", Alert.AlertType.WARNING);
         }
     }
 
@@ -285,7 +285,7 @@ public class UsuarioViewController {
 //            double cuentasAsociadas = Double.parseDouble(txtCuentasAsociadas.getText());
 //
 //            return new UsuarioDto(
-//                    Integer.parseInt(txtIDUsuario.getText()),
+//                    txtIDUsuario.getText(),
 //                    txtNombreCompleto.getText(),
 //                    txtCorreo.getText(),
 //                    Integer.parseInt(txtTelefono.getText()),
@@ -299,7 +299,7 @@ public class UsuarioViewController {
 //            return null; // O alguna otra acción adecuada en caso de error
 //        }
 //    }
-//
+
 //    private void mostrarAlertaError(String titulo, String mensaje) {
 //        Alert alerta = new Alert(Alert.AlertType.ERROR);
 //        alerta.setTitle(titulo);
