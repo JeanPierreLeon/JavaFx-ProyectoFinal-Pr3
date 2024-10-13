@@ -3,9 +3,11 @@ package co.edu.uniquindio.pr3.billeteravirtualapp.model;
 import co.edu.uniquindio.pr3.billeteravirtualapp.exceptions.UsuarioException;
 import co.edu.uniquindio.pr3.billeteravirtualapp.model.services.IBilleteraVirtualService;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class BilleteraVirtual implements IBilleteraVirtualService {
+public class BilleteraVirtual implements IBilleteraVirtualService, Serializable {
+    private static final long serialVersionUID = 1L;
     ArrayList<Usuario> listaUsuarios = new ArrayList<>();
     ArrayList<Cuenta> listaCuentas = new ArrayList<>();
     ArrayList<Transaccion> listaTransacciones = new ArrayList<>();

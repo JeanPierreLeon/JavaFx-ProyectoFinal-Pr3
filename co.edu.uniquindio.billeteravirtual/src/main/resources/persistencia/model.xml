@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="22.0.2" class="java.beans.XMLDecoder">
+ <object class="co.edu.uniquindio.pr3.billeteravirtualapp.model.BilleteraVirtual" id="BilleteraVirtual0">
+  <void property="listaUsuarios">
+   <void method="add">
+    <object class="co.edu.uniquindio.pr3.billeteravirtualapp.model.Usuario">
+     <void property="correoElectronico">
+      <string>Santiago@gmail.com</string>
+     </void>
+     <void property="cuentasAsociadas">
+      <string>Nequi, DaviPlata, Paypal</string>
+     </void>
+     <void property="direccion">
+      <string>cra</string>
+     </void>
+     <void property="idUsuario">
+      <string>888</string>
+     </void>
+     <void property="nombreCompleto">
+      <string>Santiago xdxdxdxd</string>
+     </void>
+     <void property="saldoTotal">
+      <double>10000.0</double>
+     </void>
+     <void property="telefono">
+      <int>314444444</int>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.pr3.billeteravirtualapp.model.Usuario">
+     <void property="correoElectronico">
+      <string>Muñoz@gmail.com</string>
+     </void>
+     <void property="cuentasAsociadas">
+      <string>Nequi, DaviPlata, Paypal</string>
+     </void>
+     <void property="direccion">
+      <string>Cra 20 Calle 30</string>
+     </void>
+     <void property="idUsuario">
+      <string>222</string>
+     </void>
+     <void property="nombreCompleto">
+      <string>Santiago Lol</string>
+     </void>
+     <void property="saldoTotal">
+      <double>35000.0</double>
+     </void>
+     <void property="telefono">
+      <int>313333333</int>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.pr3.billeteravirtualapp.model.Usuario">
+     <void property="correoElectronico">
+      <string>Patron@gmail.com</string>
+     </void>
+     <void property="cuentasAsociadas">
+      <string>Nequi, DaviPlata, Paypal</string>
+     </void>
+     <void property="direccion">
+      <string>Cra 66 Calle 66</string>
+     </void>
+     <void property="idUsuario">
+      <string>333</string>
+     </void>
+     <void property="nombreCompleto">
+      <string>Pablo Escobar</string>
+     </void>
+     <void property="saldoTotal">
+      <double>99999.0</double>
+     </void>
+     <void property="telefono">
+      <int>316666666</int>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>

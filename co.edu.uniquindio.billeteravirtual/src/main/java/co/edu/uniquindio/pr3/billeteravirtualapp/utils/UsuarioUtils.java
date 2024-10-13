@@ -3,34 +3,34 @@ package co.edu.uniquindio.pr3.billeteravirtualapp.utils;
 import co.edu.uniquindio.pr3.billeteravirtualapp.model.BilleteraVirtual;
 import co.edu.uniquindio.pr3.billeteravirtualapp.model.Usuario;
 
-public class BilleteraVirtualUtils {
+public class UsuarioUtils {
 
 
     public static BilleteraVirtual inicializarDatos() {
         BilleteraVirtual billeteraVirtual = new BilleteraVirtual();
 
         Usuario usuario = new Usuario();
-        usuario.setIdUsuario(String.valueOf(001));
-        usuario.setNombreCompleto("Santiago Ramirez");
+        usuario.setIdUsuario(String.valueOf(888));
+        usuario.setNombreCompleto("Santiago xdxdxdxd");
         usuario.setCorreoElectronico("Santiago@gmail.com");
         usuario.setTelefono(314444444);
         usuario.setDireccion("Cra 90 Calle 23");
-        usuario.setSaldoTotal(100.000);
+        usuario.setSaldoTotal(10000);
         usuario.setCuentasAsociadas("Nequi, DaviPlata, Paypal");
         billeteraVirtual.getListaUsuarios().add(usuario);
 
         usuario = new Usuario();
-        usuario.setIdUsuario(String.valueOf(002));
-        usuario.setNombreCompleto("Santiago Muñoz");
+        usuario.setIdUsuario(String.valueOf(222));
+        usuario.setNombreCompleto("Santiago Lol");
         usuario.setCorreoElectronico("Muñoz@gmail.com");
-        usuario.setTelefono(31333333);
+        usuario.setTelefono(313333333);
         usuario.setDireccion("Cra 20 Calle 30");
-        usuario.setSaldoTotal(35.000);
+        usuario.setSaldoTotal(35000);
         usuario.setCuentasAsociadas("Nequi, DaviPlata, Paypal");
         billeteraVirtual.getListaUsuarios().add(usuario);
 
         usuario = new Usuario();
-        usuario.setIdUsuario(String.valueOf(003));
+        usuario.setIdUsuario(String.valueOf(333));
         usuario.setNombreCompleto("Pablo Escobar");
         usuario.setCorreoElectronico("Patron@gmail.com");
         usuario.setTelefono(316666666);

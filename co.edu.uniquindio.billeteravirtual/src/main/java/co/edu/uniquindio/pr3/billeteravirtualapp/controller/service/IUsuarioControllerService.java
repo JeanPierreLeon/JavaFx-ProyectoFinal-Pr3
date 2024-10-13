@@ -12,4 +12,6 @@ public interface IUsuarioControllerService {
     boolean eliminarUsuario(String idUsuario);
 
     boolean actualizarUsuario(String idUsuarioActual, UsuarioDto usuarioDto);
+
+    void registrarAcciones(String mensaje, int nivel, String accion);
 }

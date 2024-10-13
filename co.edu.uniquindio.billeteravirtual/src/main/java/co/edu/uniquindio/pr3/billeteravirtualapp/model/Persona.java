@@ -1,6 +1,10 @@
 package co.edu.uniquindio.pr3.billeteravirtualapp.model;
 
-public abstract class Persona {
+import java.io.Serializable;
+
+public abstract class Persona implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private String nombreCompleto;
     private String correoElectronico;
     private int telefono;
@@ -56,5 +60,16 @@ public abstract class Persona {
 
     public void setCedula(String cedula) {
         this.cedula = cedula;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombreCompleto='" + nombreCompleto + '\'' +
+                ", correoElectronico='" + correoElectronico + '\'' +
+                ", telefono=" + telefono +
+                ", direccion='" + direccion + '\'' +
+                ", cedula='" + cedula + '\'' +
+                '}';
     }
 }

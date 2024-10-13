@@ -185,12 +185,17 @@ public class UsuarioViewController {
                 listaUsuariosDto.add(usuarioDto);
                 mostrarMensaje("Notificación Usuario", "Usuario creado", "El Usuario se ha creado con éxito", Alert.AlertType.INFORMATION);
                 limpiarCamposUsuario();
+                registrarAcciones("Usuario agregado",1,"Agregar Usuario");
             }else{
                 mostrarMensaje("Notificación Usuario", "Usuario no creado", "El Usuario no se ha creado con éxito", Alert.AlertType.ERROR);
             }
         }else{
             mostrarMensaje("Notificación Usuario", "Usuario no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
         }
+    }
+
+    private void registrarAcciones(String mensaje, int nivel, String accion) {
+            usuarioControllerService.registrarAcciones(mensaje,nivel, accion);
     }
 
     private UsuarioDto construirUsuarioDto() {
@@ -259,7 +264,7 @@ public class UsuarioViewController {
     private void eliminarUsuario() {
         boolean usuarioEliminado = false;
         if(usuarioSeleccionado != null){
-            if(mostrarMensajeConfirmacion("¿Estas seguro de elmininar al empleado?")){
+            if(mostrarMensajeConfirmacion("¿Estas seguro de elmininar el usuario?")){
                 usuarioEliminado = usuarioControllerService.eliminarUsuario(String.valueOf(usuarioSeleccionado.idUsuario()));
                 if(usuarioEliminado == true){
                     listaUsuariosDto.remove(usuarioSeleccionado);
@@ -278,35 +283,7 @@ public class UsuarioViewController {
 
 
 
-//    private UsuarioDto construirUsuarioDto() {
-//        try {
-//            int idUsuario = Integer.parseInt(txtIDUsuario.getText());
-//            int telefono = Integer.parseInt(txtTelefono.getText());
-//            double cuentasAsociadas = Double.parseDouble(txtCuentasAsociadas.getText());
-//
-//            return new UsuarioDto(
-//                    txtIDUsuario.getText(),
-//                    txtNombreCompleto.getText(),
-//                    txtCorreo.getText(),
-//                    Integer.parseInt(txtTelefono.getText()),
-//                    txtDireccion.getText(),
-//                    Double.parseDouble(txtSaldoTotal.getText()),
-//                    txtCuentasAsociadas.getText()
-//            );
-//        } catch (NumberFormatException e) {
-//            // Aquí manejas el error, por ejemplo, mostrando una alerta al usuario
-//            mostrarAlertaError("Entrada inválida", "Por favor, ingrese un número válido.");
-//            return null; // O alguna otra acción adecuada en caso de error
-//        }
-//    }
 
-//    private void mostrarAlertaError(String titulo, String mensaje) {
-//        Alert alerta = new Alert(Alert.AlertType.ERROR);
-//        alerta.setTitle(titulo);
-//        alerta.setHeaderText(null);
-//        alerta.setContentText(mensaje);
-//        alerta.showAndWait();
-//    }
 
 
 
