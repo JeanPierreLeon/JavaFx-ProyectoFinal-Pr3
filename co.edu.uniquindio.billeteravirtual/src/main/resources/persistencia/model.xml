@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="22.0.2" class="java.beans.XMLDecoder">
  <object class="co.edu.uniquindio.pr3.billeteravirtualapp.model.BilleteraVirtual" id="BilleteraVirtual0">
+  <void property="listaCuentas">
+   <void method="add">
+    <object class="co.edu.uniquindio.pr3.billeteravirtualapp.model.Cuenta">
+     <void property="idCuenta">
+      <string>121212</string>
+     </void>
+     <void property="nombreBanco">
+      <string>Nequi</string>
+     </void>
+     <void property="numCuenta">
+      <string>123131313</string>
+     </void>
+     <void property="tipoCuenta">
+      <string>Corriente</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.pr3.billeteravirtualapp.model.Cuenta">
+     <void property="idCuenta">
+      <string>0</string>
+     </void>
+     <void property="nombreBanco">
+      <string>Daviplata</string>
+     </void>
+     <void property="numCuenta">
+      <string>645654</string>
+     </void>
+     <void property="tipoCuenta">
+      <string>Corriente</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.pr3.billeteravirtualapp.model.Cuenta">
+     <void property="idCuenta">
+      <string>0</string>
+     </void>
+     <void property="nombreBanco">
+      <string>Nequi</string>
+     </void>
+     <void property="numCuenta">
+      <string>4564564</string>
+     </void>
+     <void property="tipoCuenta">
+      <string>Ahorro</string>
+     </void>
+    </object>
+   </void>
+  </void>
   <void property="listaUsuarios">
    <void method="add">
     <object class="co.edu.uniquindio.pr3.billeteravirtualapp.model.Usuario">
@@ -11,7 +61,7 @@
       <string>Nequi, DaviPlata, Paypal</string>
      </void>
      <void property="direccion">
-      <string>cra</string>
+      <string>Cra 90 Calle 23</string>
      </void>
      <void property="idUsuario">
       <string>888</string>

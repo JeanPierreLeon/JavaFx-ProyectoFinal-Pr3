@@ -228,3 +228,37 @@ oct 15, 2024 10:11:49 P. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.Arc
 INFO: inicioSesión,Inicio de sesión,2024-10-15
 nov 15, 2024 3:13:07 P. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2024-11-15
+nov 15, 2024 11:47:57 P. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-15
+nov 15, 2024 11:58:24 P. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-15
+nov 16, 2024 1:59:22 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 2:00:45 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 2:04:10 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 2:13:22 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 2:17:34 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 2:18:02 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: Agregar Usuario,Usuario agregado,2024-11-16
+nov 16, 2024 2:40:20 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 4:34:30 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 5:17:05 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 5:21:57 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 5:23:32 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 5:31:37 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 5:31:52 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: Agregar Cuenta,Cuenta Agregada,2024-11-16
+nov 16, 2024 5:32:16 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: Agregar Cuenta,Cuenta Agregada,2024-11-16
+nov 16, 2024 5:32:35 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: Agregar Cuenta,Cuenta Agregada,2024-11-16

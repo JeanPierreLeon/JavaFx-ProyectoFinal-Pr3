@@ -1,27 +1,32 @@
 package co.edu.uniquindio.pr3.billeteravirtualapp.model;
 
-public class Cuenta {
-    private int idCuenta;
+import java.io.Serializable;
+
+public class Cuenta implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private static int contador;
+    private String idCuenta;
     private String nombreBanco;
-    private int numCuenta;
+    private String numCuenta;
     private String tipoCuenta;
 
     public Cuenta() {
+        this.idCuenta = String.valueOf(contador++);
     }
 
-    public Cuenta(int idCuenta, String nombreBanco, int numCuenta, String tipoCuenta) {
+    public Cuenta(String idCuenta, String nombreBanco, String numCuenta, String tipoCuenta) {
         this.idCuenta = idCuenta;
         this.nombreBanco = nombreBanco;
         this.numCuenta = numCuenta;
         this.tipoCuenta = tipoCuenta;
     }
 
-    public int getIdCuenta() {
+    public String getIdCuenta() {
         return idCuenta;
     }
 
-    public void setIdCuenta(int idCuenta) {
-        this.idCuenta = idCuenta;
+    public void setIdCuenta(String idCuenta) {
+        this.idCuenta = String.valueOf(idCuenta);
     }
 
     public String getNombreBanco() {
@@ -32,12 +37,12 @@ public class Cuenta {
         this.nombreBanco = nombreBanco;
     }
 
-    public int getNumCuenta() {
+    public String getNumCuenta() {
         return numCuenta;
     }
 
-    public void setNumCuenta(int numCuenta) {
-        this.numCuenta = numCuenta;
+    public void setNumCuenta(String numCuenta) {
+        this.numCuenta = String.valueOf(numCuenta);
     }
 
     public String getTipoCuenta() {

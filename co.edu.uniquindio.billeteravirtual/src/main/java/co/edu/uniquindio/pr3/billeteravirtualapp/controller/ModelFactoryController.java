@@ -1,10 +1,13 @@
 package co.edu.uniquindio.pr3.billeteravirtualapp.controller;
 
 import co.edu.uniquindio.pr3.billeteravirtualapp.controller.service.IModelFactoryControllerService;
+import co.edu.uniquindio.pr3.billeteravirtualapp.exceptions.CuentaException;
 import co.edu.uniquindio.pr3.billeteravirtualapp.exceptions.UsuarioException;
+import co.edu.uniquindio.pr3.billeteravirtualapp.mapping.dto.CuentaDto;
 import co.edu.uniquindio.pr3.billeteravirtualapp.mapping.dto.UsuarioDto;
 import co.edu.uniquindio.pr3.billeteravirtualapp.mapping.mappers.BilleteraVirtualMapper;
 import co.edu.uniquindio.pr3.billeteravirtualapp.model.BilleteraVirtual;
+import co.edu.uniquindio.pr3.billeteravirtualapp.model.Cuenta;
 import co.edu.uniquindio.pr3.billeteravirtualapp.model.Usuario;
 import co.edu.uniquindio.pr3.billeteravirtualapp.utils.Persistencia;
 import co.edu.uniquindio.pr3.billeteravirtualapp.utils.UsuarioUtils;
@@ -34,11 +37,11 @@ public class ModelFactoryController implements IModelFactoryControllerService {
         salvarDatosPrueba();
 
         //2. Cargar los datos de los archivos
-       cargarDatosDesdeArchivos();
+//       cargarDatosDesdeArchivos();
 
         //3. Guardar y Cargar el recurso serializable binario
 //		cargarResourceBinario();
-		guardarResourceBinario();
+//		guardarResourceBinario();
 
         //4. Guardar y Cargar el recurso serializable XML
 //        cargarResourceXML();
@@ -124,6 +127,56 @@ public class ModelFactoryController implements IModelFactoryControllerService {
             return false;
         }
     }
+
+    @Override
+    public List<CuentaDto> obtenerCuentas() {
+        return  mapper.getCuentasDto(billetera.getListaCuentas());
+    }
+
+    @Override
+    public boolean agregarCuenta(CuentaDto cuentaDto) {
+        try{
+            if(!billetera.verificarCuentaExistente(String.valueOf((cuentaDto.idCuenta())))) {
+                Cuenta cuenta = mapper.cuentaDtoToCuenta(cuentaDto);
+                getBilletera().agregarCuenta(cuenta);
+                guardarResourceXML();
+                salvarDatosPrueba();
+
+            }
+            return true;
+        }catch (UsuarioException e){
+            e.getMessage();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean eliminarCuenta(String idCuenta) {
+        boolean flagExiste = false;
+        try {
+            flagExiste = getBilletera().eliminarCuenta(idCuenta);
+            guardarResourceXML();
+        } catch (CuentaException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return flagExiste;
+    }
+
+    @Override
+    public boolean actualizarCuenta(String idCuentaActual, CuentaDto cuentaDto) {
+        try {
+            Cuenta cuenta = mapper.cuentaDtoToCuenta(cuentaDto);
+            getBilletera().actualizarCuenta(idCuentaActual, cuenta);
+            guardarResourceXML();
+            salvarDatosPrueba();
+            return true;
+        } catch (UsuarioException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public BilleteraVirtual getBilletera() {
         return billetera;
     }

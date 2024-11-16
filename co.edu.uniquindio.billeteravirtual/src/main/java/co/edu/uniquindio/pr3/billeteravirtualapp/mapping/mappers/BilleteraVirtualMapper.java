@@ -23,11 +23,19 @@ public interface BilleteraVirtualMapper {
     @IterableMapping(qualifiedByName = "usuarioToUsuarioDto")
     List<UsuarioDto> getUsuariosDto(List<Usuario> listaUsuarios);
 
+    @Named("cuentaToCuentaDto")
+    CuentaDto cuentaToCuentaDto(Cuenta cuenta);
+
+    Cuenta cuentaDtoToCuenta(CuentaDto cuentaDto);
+
+    @IterableMapping(qualifiedByName = "cuentaToCuentaDto")
+    List<CuentaDto> getCuentasDto(List<Cuenta> listaCuenta);
+
 //    @Named("mappingToEmpeladoDto")
 //    EmpleadoDto mappingToEmpeladoDto(Empleado empleado);
 
 
-    @Mapping(target = "idCuenta", source = "cuenta.nombreBanco")
-    @IterableMapping(qualifiedByName = "cunetaToCuentaDto")
-    CuentaDto clienteToClienteDto(Cuenta cuenta);
+//    @Mapping(target = "idCuenta", source = "cuenta.nombreBanco")
+//    @IterableMapping(qualifiedByName = "cunetaToCuentaDto")
+//    CuentaDto clienteToClienteDto(Cuenta cuenta);
 }

@@ -33,7 +33,7 @@ public class UsuarioViewController {
     private TableView<UsuarioDto> TableUsuarios;
 
     @FXML
-    private TableColumn<UsuarioDto, String> colCorreoElectronico;
+    private TableColumn<UsuarioDto, String> colCorreo;
 
     @FXML
     private TableColumn<UsuarioDto, String> colCuentasAsociadas;
@@ -92,7 +92,7 @@ public class UsuarioViewController {
     private void initDataBinding() {
         colIDUsuario.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().idUsuario())));
         colNombreCompleto.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombreCompleto()));
-        colCorreoElectronico.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().correoElectronico()));
+        colCorreo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().correoElectronico()));
         colTelefono.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().telefono())));
         colDireccion.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().direccion()));
         colSaldoTotal.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().saldoTotal())));
@@ -123,16 +123,7 @@ public class UsuarioViewController {
         }
     }
 
-    @FXML
-    void nuevoUsuarioAction(ActionEvent event) {
-        txtIDUsuario.setText("Ingrese el id del usuario");
-        txtNombreCompleto.setText("Ingrese el Nombre Completo del usuario");
-        txtCorreo.setText("Ingrese el correo del usuario");
-        txtTelefono.setText("Ingrese el telefono");
-        txtDireccion.setText("Ingrese la direccion");
-        txtSaldoTotal.setText("Ingrese el saldo total");
-        txtCuentasAsociadas.setText("Ingrese las cuentas asociadas");
-    }
+
 
     @FXML
     void agregarUsuarioAction(ActionEvent event) {

@@ -22,11 +22,6 @@ public class UsuarioController implements IUsuarioControllerService {
     }
 
     @Override
-    public void registrarAcciones(String mensaje, int nivel, String accion) {
-        modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion);
-    }
-
-    @Override
     public boolean eliminarUsuario(String idUsuario) {
         return modelFactoryController.eliminarUsuario(idUsuario);
     }
@@ -34,6 +29,11 @@ public class UsuarioController implements IUsuarioControllerService {
     @Override
     public boolean actualizarUsuario(String idUsuarioActual, UsuarioDto usuarioDto) {
         return modelFactoryController.actualizarUsuario(idUsuarioActual, usuarioDto);
+    }
+
+    @Override
+    public void registrarAcciones(String mensaje, int nivel, String accion) {
+        modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion);
     }
 
     

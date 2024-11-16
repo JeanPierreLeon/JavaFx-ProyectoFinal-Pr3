@@ -5,15 +5,15 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="996.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="899.0" prefWidth="1045.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TabPane prefHeight="683.0" prefWidth="996.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="-3.0" prefHeight="898.0" prefWidth="1046.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Usuario">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="583.0" prefWidth="918.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="870.0" prefWidth="1086.0">
                      <children>
-                        <SplitPane layoutX="11.0" layoutY="11.0" orientation="VERTICAL" prefHeight="540.0" prefWidth="870.0">
+                        <SplitPane orientation="VERTICAL" prefHeight="869.0" prefWidth="1086.0">
                           <items>
                             <fx:include source="UsuarioView.fxml" />
                           </items>
@@ -24,9 +24,21 @@
           </Tab>
           <Tab text="Cuenta">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="572.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="572.0">
+                     <children>
+                        <fx:include source="CuentaView.fxml" />
+                     </children></AnchorPane>
             </content>
           </Tab>
+            <Tab text="Transsaciones">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="572.0">
+                     <children>
+                        <fx:include source="Transacciones.fxml" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

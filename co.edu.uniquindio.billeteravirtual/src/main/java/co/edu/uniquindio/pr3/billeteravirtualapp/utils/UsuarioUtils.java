@@ -1,6 +1,7 @@
 package co.edu.uniquindio.pr3.billeteravirtualapp.utils;
 
 import co.edu.uniquindio.pr3.billeteravirtualapp.model.BilleteraVirtual;
+import co.edu.uniquindio.pr3.billeteravirtualapp.model.Cuenta;
 import co.edu.uniquindio.pr3.billeteravirtualapp.model.Usuario;
 
 public class UsuarioUtils {
@@ -39,6 +40,22 @@ public class UsuarioUtils {
         usuario.setCuentasAsociadas("Nequi, DaviPlata, Paypal");
         billeteraVirtual.getListaUsuarios().add(usuario);
         System.out.println("Información de la billetera creada");
+
+
+        Cuenta cuenta = new Cuenta();
+        cuenta.setIdCuenta(String.valueOf(121212));
+        cuenta.setNombreBanco("Nequi");
+        cuenta.setTipoCuenta("Corriente");
+        cuenta.setNumCuenta(String.valueOf(123131313));
+        billeteraVirtual.getListaCuentas().add(cuenta);
+
+        cuenta = new Cuenta();
+        cuenta.setIdCuenta(String.valueOf(131313));
+        cuenta.setNombreBanco("Daviplata");
+        cuenta.setTipoCuenta("Ahorro");
+        cuenta.setNumCuenta(String.valueOf(645654));
+        billeteraVirtual.getListaCuentas().add(cuenta);
+
         return billeteraVirtual;
 
 }

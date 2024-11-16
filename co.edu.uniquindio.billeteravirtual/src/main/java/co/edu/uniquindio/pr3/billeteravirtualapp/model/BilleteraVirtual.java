@@ -1,10 +1,12 @@
 package co.edu.uniquindio.pr3.billeteravirtualapp.model;
 
+import co.edu.uniquindio.pr3.billeteravirtualapp.exceptions.CuentaException;
 import co.edu.uniquindio.pr3.billeteravirtualapp.exceptions.UsuarioException;
 import co.edu.uniquindio.pr3.billeteravirtualapp.model.services.IBilleteraVirtualService;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BilleteraVirtual implements IBilleteraVirtualService, Serializable {
     private static final long serialVersionUID = 1L;
@@ -59,6 +61,10 @@ public class BilleteraVirtual implements IBilleteraVirtualService, Serializable 
 
     public void agregarUsuario(Usuario nuevoUsuario) throws UsuarioException {
         getListaUsuarios().add(nuevoUsuario);
+    }
+
+    public void agregarCuenta(Cuenta nuevaCuenta) throws CuentaException {
+        getListaCuentas().add(nuevaCuenta);
     }
 
     @Override
@@ -138,6 +144,89 @@ public class BilleteraVirtual implements IBilleteraVirtualService, Serializable 
         return getListaUsuarios();
     }
 
+    @Override
+    public Cuenta crearCuenta(String idCuenta, String nombreBanco, int numCuenta, String tipoCuenta) throws UsuarioException {
+        Cuenta nuevoCuenta = null;
+        boolean cuentaExiste = verificarUsuarioExistente(idCuenta);
+        if(cuentaExiste){
+            throw new CuentaException("La cuenta con id : "+ idCuenta +" ya existe");
+        }else{
+            nuevoCuenta = new Cuenta();
+            nuevoCuenta.setIdCuenta((idCuenta));
+            nuevoCuenta.setNombreBanco(nombreBanco);
+            nuevoCuenta.setTipoCuenta(tipoCuenta);
+            nuevoCuenta.setNumCuenta(String.valueOf(numCuenta));
+            getListaCuentas().add(nuevoCuenta);
+        }
+        return nuevoCuenta;
+    }
+
+    @Override
+    public Boolean eliminarCuenta(String idCuenta) throws UsuarioException {
+        Cuenta cuenta = null;
+        boolean flagExiste = false;
+        cuenta = obtenerCuenta(idCuenta);
+        if(cuenta == null)
+            throw new CuentaException("La cuenta a eliminar no existe");
+        else{
+            getListaCuentas().remove(cuenta);
+            flagExiste = true;
+        }
+        return flagExiste;
+    }
+
+    @Override
+    public boolean actualizarCuenta(String idCuentaActual, Cuenta cuenta) throws UsuarioException {
+        Cuenta cuentaActual = obtenerCuenta(idCuentaActual);
+        if(cuentaActual == null)
+            throw new UsuarioException("El usuario a actualizar no existe");
+        else{
+            cuentaActual.setIdCuenta(cuenta.getIdCuenta());
+            cuentaActual.setNombreBanco(cuenta.getNombreBanco());
+            cuentaActual.setTipoCuenta(cuenta.getTipoCuenta());
+            cuentaActual.setNumCuenta(cuenta.getNumCuenta());
+            return true;
+        }
+    }
+
+    @Override
+    public boolean verificarCuentaExistente(String idCuenta) throws UsuarioException {
+        if(cuentaExiste(idCuenta)){
+            throw new CuentaException("El usuario con id de usuario: "+idCuenta+" ya existe");
+        }else{
+            return false;
+        }
+    }
+
+    private boolean cuentaExiste(String idCuenta) {
+        boolean cuentaEncontrado = false;
+        for (Cuenta cuenta : getListaCuentas()) {
+            if(cuenta.getIdCuenta().equalsIgnoreCase((idCuenta))){
+                cuentaEncontrado = true;
+                break;
+            }
+        }
+        return cuentaEncontrado;
+    }
+
+    @Override
+    public Cuenta obtenerCuenta(String idCuenta) {
+        Cuenta cuentaEncontrado = null;
+        for (Cuenta cuenta : getListaCuentas()) {
+            if(cuenta.getIdCuenta().equalsIgnoreCase(idCuenta)){
+                cuentaEncontrado = cuenta;
+                break;
+            }
+        }
+        return cuentaEncontrado;
+    }
+
+    @Override
+    public ArrayList<Cuenta> obtenerCuentas() {
+        // TODO Auto-generated method stub
+        return getListaCuentas();
+    }
+
     public boolean usuarioExiste(String idUsuario) {
         boolean usuarioEncontrado = false;
         for (Usuario usuario : getListaUsuarios()) {
@@ -148,4 +237,7 @@ public class BilleteraVirtual implements IBilleteraVirtualService, Serializable 
         }
         return usuarioEncontrado;
     }
+
+
+
 }

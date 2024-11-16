@@ -1,7 +1,7 @@
 package co.edu.uniquindio.pr3.billeteravirtualapp.utils;
 
 
-import co.edu.uniquindio.pr3.billeteravirtualapp.exceptions.UsuarioException;
+
 import co.edu.uniquindio.pr3.billeteravirtualapp.model.BilleteraVirtual;
 import co.edu.uniquindio.pr3.billeteravirtualapp.model.Usuario;
 import java.io.FileNotFoundException;
@@ -13,10 +13,10 @@ public class Persistencia {
 
 
     public static final String RUTA_USERS_PROPERTIES = "src/main/resources/propiedades/config.properties";
-    public static final String RUTA_ARCHIVO_USUARIOS = "C:\\Users\\jeanp\\Documents\\Programacion 3\\JavaFx-ProyectoFinal-Pr3\\co.edu.uniquindio.billeteravirtual\\src\\main\\resources\\persistencia\\archivoUsuarios.txt";
-    public static final String RUTA_ARCHIVO_LOG = "C:\\Users\\jeanp\\Documents\\Programacion 3\\JavaFx-ProyectoFinal-Pr3\\co.edu.uniquindio.billeteravirtual\\src\\main\\resources\\persistencia\\log\\BilleteraLog.txt";
-    public static final String RUTA_ARCHIVO_MODELO_BILLETERA_BINARIO = "C:\\Users\\jeanp\\Documents\\Programacion 3\\JavaFx-ProyectoFinal-Pr3\\co.edu.uniquindio.billeteravirtual\\src\\main\\resources\\persistencia\\model.dat";
-    public static final String RUTA_ARCHIVO_MODELO_BILLETERA_XML = "C:\\Users\\jeanp\\Documents\\Programacion 3\\JavaFx-ProyectoFinal-Pr3\\co.edu.uniquindio.billeteravirtual\\src\\main\\resources\\persistencia\\model.xml";
+    public static final String RUTA_ARCHIVO_USUARIOS = "src/main/resources/persistencia/archivoUsuarios.txt";
+    public static final String RUTA_ARCHIVO_LOG = "src/main/resources/persistencia/log/BilleteraLog.txt";
+    public static final String RUTA_ARCHIVO_MODELO_BILLETERA_BINARIO = "src/main/resources/persistencia/model.dat";
+    public static final String RUTA_ARCHIVO_MODELO_BILLETERA_XML = "src/main/resources/persistencia/model.xml";
 
 
     public static void cargarDatosArchivos(BilleteraVirtual billeteraVirtual) throws FileNotFoundException, IOException {

@@ -2,54 +2,92 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="646.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.billeteravirtualapp.viewController.UsuarioViewController">
-   <children>
-      <SplitPane dividerPositions="0.4311594202898551" orientation="VERTICAL" prefHeight="646.0" prefWidth="981.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="227.0" prefWidth="693.0">
-               <children>
-                  <Button fx:id="btnAgregarUsuario" layoutX="606.0" layoutY="196.0" mnemonicParsing="false" onAction="#agregarUsuarioAction" text="Agregar Usuario" />
-                  <Button fx:id="btnNuevoUsuario" layoutX="409.0" layoutY="196.0" mnemonicParsing="false" onAction="#nuevoUsuarioAction" text="Nuevo Usuario" />
-                  <Button fx:id="btnActualizarUsuario" layoutX="795.0" layoutY="196.0" mnemonicParsing="false" onAction="#actualizarUsuarioAction" prefHeight="25.0" prefWidth="95.0" text="Actualizar" />
-                  <TextField fx:id="txtDireccion" layoutX="623.0" layoutY="23.0" prefHeight="25.0" prefWidth="219.0" />
-                  <Label layoutX="509.0" layoutY="27.0" text="Direccion:" />
-                  <TextField fx:id="txtSaldoTotal" layoutX="623.0" layoutY="71.0" prefHeight="25.0" prefWidth="219.0" />
-                  <Label layoutX="504.0" layoutY="75.0" text="Saldo Total:" />
-                  <TextField fx:id="txtCuentasAsociadas" layoutX="623.0" layoutY="125.0" prefHeight="25.0" prefWidth="219.0" />
-                  <Label layoutX="504.0" layoutY="128.0" text="Cuentas Asociadas:" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-               <children>
-                  <TableView fx:id="TableUsuarios" layoutX="57.0" layoutY="14.0" prefHeight="283.0" prefWidth="866.0">
+<AnchorPane prefHeight="867.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.billeteravirtualapp.viewController.UsuarioViewController">
+    <children>
+        <!-- Fondo decorativo -->
+        <ImageView fitHeight="867.0" fitWidth="1544.0" layoutX="-343.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/negromadera.jpg" />
+            </image>
+        </ImageView>
+
+        <!-- Panel principal de usuario -->
+        <AnchorPane layoutX="251.0" layoutY="49.0" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #262525; -fx-background-radius: 25;">
+            <children>
+                <!-- Título del formulario -->
+                <Label layoutX="50.0" layoutY="20.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="GESTIÓN DE USUARIO" textFill="WHITE" />
+                <AnchorPane layoutX="50.0" layoutY="60.0" prefHeight="3.0" prefWidth="500.0" style="-fx-background-color: #FB2222;" />
+
+                <!-- Campos de texto -->
+                <Label layoutX="50.0" layoutY="80.0" text="ID Usuario:" textFill="WHITE" />
+                <TextField fx:id="txtIDUsuario" layoutX="200.0" layoutY="80.0" prefHeight="30.0" prefWidth="300.0" promptText="Ingrese el ID del usuario" />
+
+                <Label layoutX="50.0" layoutY="130.0" text="Nombre Completo:" textFill="WHITE" />
+                <TextField fx:id="txtNombreCompleto" layoutX="200.0" layoutY="130.0" prefHeight="30.0" prefWidth="300.0" promptText="Ingrese el nombre completo" />
+
+                <Label layoutX="50.0" layoutY="180.0" text="Correo Electrónico:" textFill="WHITE" />
+                <TextField fx:id="txtCorreo" layoutX="200.0" layoutY="180.0" prefHeight="30.0" prefWidth="300.0" promptText="Ingrese el correo electrónico" />
+
+                <Label layoutX="50.0" layoutY="230.0" text="Teléfono:" textFill="WHITE" />
+                <TextField fx:id="txtTelefono" layoutX="200.0" layoutY="230.0" prefHeight="30.0" prefWidth="300.0" promptText="Ingrese el teléfono" />
+
+                <Label layoutX="50.0" layoutY="280.0" text="Dirección:" textFill="WHITE" />
+                <TextField fx:id="txtDireccion" layoutX="200.0" layoutY="280.0" prefHeight="30.0" prefWidth="300.0" promptText="Ingrese la dirección" />
+
+                <Label layoutX="50.0" layoutY="330.0" text="Saldo Total:" textFill="WHITE" />
+                <TextField fx:id="txtSaldoTotal" layoutX="200.0" layoutY="330.0" prefHeight="30.0" prefWidth="300.0" promptText="Ingrese el saldo total" />
+
+                <Label layoutX="50.0" layoutY="380.0" text="Cuentas Asociadas:" textFill="WHITE" />
+                <TextField fx:id="txtCuentasAsociadas" layoutX="200.0" layoutY="380.0" prefHeight="30.0" prefWidth="300.0" promptText="Ingrese las cuentas asociadas" />
+
+                <!-- Botones -->
+                <Button fx:id="btnAgregarUsuario" layoutX="120.0" layoutY="440.0" onAction="#agregarUsuarioAction" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #FB2222; -fx-text-fill: white; -fx-background-radius: 15;" text="Agregar" />
+                <Button fx:id="btnActualizarUsuario" layoutX="250.0" layoutY="440.0" onAction="#actualizarUsuarioAction" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 15;" text="Actualizar" />
+                <Button fx:id="btnEliminarUsuario" layoutX="380.0" layoutY="440.0" onAction="#eliminarUsuarioAction" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #FF5722; -fx-text-fill: white; -fx-background-radius: 15;" text="Eliminar" />
+            </children>
+        </AnchorPane>
+
+        <!-- Contenedor para la TableView con el mismo estilo que el formulario de usuario -->
+        <AnchorPane layoutX="53.0" layoutY="600.0" prefHeight="250.0" prefWidth="926.0" style="-fx-background-color: #262525; -fx-background-radius: 25;">
+            <children>
+                <!-- TableView para mostrar la información del usuario -->
+                <TableView fx:id="TableUsuarios" layoutX="10.0" layoutY="10.0" prefHeight="230.0" prefWidth="907.0" style="-fx-background-color: #262525; -fx-background-radius: 25;">
                     <columns>
-                      <TableColumn fx:id="colIDUsuario" prefWidth="71.0" text="ID Usuario" />
-                      <TableColumn fx:id="colNombreCompleto" prefWidth="145.0" text="Nombre Completo" />
-                        <TableColumn fx:id="colCorreoElectronico" prefWidth="177.0" text="Correo Electronico" />
-                        <TableColumn fx:id="colTelefono" prefWidth="121.0" text="Telefono" />
-                        <TableColumn fx:id="colDireccion" prefWidth="137.0" text="Direccion" />
-                        <TableColumn fx:id="colSaldoTotal" prefWidth="88.0" text="Saldo Total" />
-                        <TableColumn fx:id="colCuentasAsociadas" prefWidth="126.0" text="Cuentas Asociadas" />
+                        <!-- Columna ID Usuario -->
+                        <TableColumn fx:id="colIDUsuario" prefWidth="100.0" text="ID Usuario" />
+
+                        <!-- Columna Nombre Completo -->
+                        <TableColumn fx:id="colNombreCompleto" prefWidth="150.0" text="Nombre Completo" />
+
+                        <!-- Columna Correo Electrónico -->
+                        <TableColumn fx:id="colCorreo" prefWidth="150.0" text="Correo Electrónico" />
+
+                        <!-- Columna Teléfono -->
+                        <TableColumn fx:id="colTelefono" prefWidth="100.0" text="Teléfono" />
+
+                        <!-- Columna Dirección -->
+                        <TableColumn fx:id="colDireccion" prefWidth="150.0" text="Dirección" />
+
+                        <!-- Columna Saldo Total -->
+                        <TableColumn fx:id="colSaldoTotal" prefWidth="100.0" text="Saldo Total" />
+
+                        <!-- Columna Cuentas Asociadas -->
+                        <TableColumn fx:id="colCuentasAsociadas" prefWidth="150.0" text="Cuentas Asociadas" />
                     </columns>
-                  </TableView>
-                  <Button fx:id="btnEliminarUsuario" layoutX="439.0" layoutY="311.0" mnemonicParsing="false" onAction="#eliminarUsuarioAction" text="Eliminar Usuario" textFill="#c21c10" />
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-      <TextField fx:id="txtIDUsuario" layoutX="136.0" layoutY="22.0" prefHeight="25.0" prefWidth="219.0" />
-      <Label layoutX="16.0" layoutY="31.0" text="ID Usuario:" />
-      <Label layoutX="14.0" layoutY="79.0" text="Nombre Completo:" />
-      <TextField fx:id="txtNombreCompleto" layoutX="136.0" layoutY="74.0" prefHeight="25.0" prefWidth="219.0" />
-      <Label layoutX="14.0" layoutY="133.0" text="Correo Electronico:" />
-      <TextField fx:id="txtCorreo" layoutX="136.0" layoutY="128.0" prefHeight="25.0" prefWidth="219.0" />
-      <Label layoutX="14.0" layoutY="188.0" text="Telefono:" />
-      <TextField fx:id="txtTelefono" layoutX="136.0" layoutY="184.0" prefHeight="25.0" prefWidth="219.0" />
-   </children>
+                </TableView>
+            </children>
+        </AnchorPane>
+      <ImageView fitHeight="152.0" fitWidth="138.0" layoutX="53.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/img_1.png" />
+         </image>
+      </ImageView>
+    </children>
 </AnchorPane>
