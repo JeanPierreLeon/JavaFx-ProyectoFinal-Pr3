@@ -34,11 +34,11 @@ public class ModelFactoryController implements IModelFactoryControllerService {
         salvarDatosPrueba();
 
         //2. Cargar los datos de los archivos
-//       cargarDatosDesdeArchivos();
+       cargarDatosDesdeArchivos();
 
         //3. Guardar y Cargar el recurso serializable binario
 //		cargarResourceBinario();
-//		guardarResourceBinario();
+		guardarResourceBinario();
 
         //4. Guardar y Cargar el recurso serializable XML
 //        cargarResourceXML();
@@ -150,5 +150,13 @@ public class ModelFactoryController implements IModelFactoryControllerService {
 
     public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
         Persistencia.guardaRegistroLog(mensaje, nivel, accion);
+    }
+
+    public boolean iniciarSesion(String user, String password) {
+        return Persistencia.iniciarSesion(user, password);
+    }
+
+    public boolean registrarUsuario(String user, String password) {
+        return Persistencia.registroUsuario(user, password);
     }
 }

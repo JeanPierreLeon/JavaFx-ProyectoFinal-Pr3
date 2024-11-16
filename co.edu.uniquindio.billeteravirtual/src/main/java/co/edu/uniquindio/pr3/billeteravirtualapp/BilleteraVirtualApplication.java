@@ -10,7 +10,7 @@ import java.io.IOException;
 public class BilleteraVirtualApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(BilleteraVirtualApplication.class.getResource("BilleteraVirtual.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(BilleteraVirtualApplication.class.getResource("LoginView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Billetera Virtual App");
         stage.setScene(scene);

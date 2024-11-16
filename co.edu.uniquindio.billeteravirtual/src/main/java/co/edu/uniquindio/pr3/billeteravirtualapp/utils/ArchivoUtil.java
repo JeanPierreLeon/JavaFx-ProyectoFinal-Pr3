@@ -5,6 +5,7 @@ import java.beans.XMLEncoder;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -202,6 +203,77 @@ public  class ArchivoUtil {
         codificadorXML = new XMLEncoder(new FileOutputStream(rutaArchivo));
         codificadorXML.writeObject(objeto);
         codificadorXML.close();
+
+    }
+
+    public static boolean iniciarSesion(String user, String password, String rutaUsersProperties) {
+
+        Properties users = new Properties();
+
+        try {
+            FileInputStream fis = new FileInputStream(rutaUsersProperties);
+            users.load(fis);
+            fis.close();
+        }catch (IOException e) {
+            System.out.println("Error al cargar el archivo de propiedades: " + e.getMessage());
+            return false;
+        }
+
+        int userID = 0;
+        boolean resultado = false;
+        while (users.containsKey("user" + (++userID))) {
+
+            String usuario = users.getProperty("user" + userID);
+
+            if (usuario.equals(user)) {
+                String pass = users.getProperty("password" + userID);
+                resultado = password.equals(pass);
+                break;
+            }
+        }
+        return resultado;
+    }
+
+    public static boolean registrarUsuario(String user, String password, String rutaUsersProperties) {
+        Properties users = new Properties();
+
+        try {
+            FileInputStream fis = new FileInputStream(rutaUsersProperties);
+            users.load(fis);
+            fis.close();
+        }catch (IOException e) {
+            System.out.println("Error al cargar el archivo de propiedades: " + e.getMessage());
+        }
+
+        int userID = 0;
+        boolean userExiste = false;
+
+        while (users.containsKey("user" + (userID + 1))) {
+            userID++;
+            String storedUser = users.getProperty("user" + userID);
+
+            if (storedUser.equals(user)) {
+                userExiste = true;
+                break;
+            }
+        }
+
+        if(userExiste){
+            return false;
+        }
+
+        users.setProperty("user" + (userID+1), user);
+        users.setProperty("password" + (userID+1), password);
+
+        try {
+            FileOutputStream fos = new FileOutputStream(rutaUsersProperties);
+            users.store(fos,null);
+            fos.close();
+            return true;
+        } catch (IOException e) {
+            System.out.println("Error al guardar el archivo de propiedades: " + e.getMessage());
+            return false;
+        }
 
     }
 

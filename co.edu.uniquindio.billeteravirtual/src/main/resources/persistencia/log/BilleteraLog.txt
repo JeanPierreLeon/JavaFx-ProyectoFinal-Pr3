@@ -222,3 +222,9 @@ oct 12, 2024 10:13:36 P. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.Arc
 INFO: inicioSesión,Inicio de sesión,2024-10-12
 oct 13, 2024 1:06:05 A. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2024-10-13
+oct 13, 2024 7:02:39 P. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-10-13
+oct 15, 2024 10:11:49 P. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-10-15
+nov 15, 2024 3:13:07 P. M. co.edu.uniquindio.pr3.billeteravirtualapp.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-15

@@ -11,6 +11,8 @@ import java.util.ArrayList;
 
 public class Persistencia {
 
+
+    public static final String RUTA_USERS_PROPERTIES = "src/main/resources/propiedades/config.properties";
     public static final String RUTA_ARCHIVO_USUARIOS = "C:\\Users\\jeanp\\Documents\\Programacion 3\\JavaFx-ProyectoFinal-Pr3\\co.edu.uniquindio.billeteravirtual\\src\\main\\resources\\persistencia\\archivoUsuarios.txt";
     public static final String RUTA_ARCHIVO_LOG = "C:\\Users\\jeanp\\Documents\\Programacion 3\\JavaFx-ProyectoFinal-Pr3\\co.edu.uniquindio.billeteravirtual\\src\\main\\resources\\persistencia\\log\\BilleteraLog.txt";
     public static final String RUTA_ARCHIVO_MODELO_BILLETERA_BINARIO = "C:\\Users\\jeanp\\Documents\\Programacion 3\\JavaFx-ProyectoFinal-Pr3\\co.edu.uniquindio.billeteravirtual\\src\\main\\resources\\persistencia\\model.dat";
@@ -90,15 +92,6 @@ public class Persistencia {
     }
 
 
-    public static boolean iniciarSesion(String idUsuario, String contraseña) throws FileNotFoundException, IOException, UsuarioException {
-
-        if(validarUsuario(idUsuario,contraseña)) {
-            return true;
-        }else {
-            throw new UsuarioException("Usuario no existe");
-        }
-
-    }
 
     private static boolean validarUsuario(String idUsuario, String contraseña) throws FileNotFoundException, IOException
     {
@@ -112,6 +105,15 @@ public class Persistencia {
             }
         }
         return false;
+    }
+
+    public static boolean iniciarSesion(String user, String password){
+        return ArchivoUtil.iniciarSesion(user,password,RUTA_USERS_PROPERTIES);
+    }
+
+
+    public static boolean registroUsuario(String user, String password){
+        return ArchivoUtil.registrarUsuario(user,password,RUTA_USERS_PROPERTIES);
     }
 
 
